@@ -1,7 +1,7 @@
 (function ($) {
 
     // Extend django admin function `dismissAddAnotherPopup` to
-    // call $.fn.trigger('liszt:updated') on the chosen <select> element
+    // call $.fn.trigger('chosen:updated') on the chosen <select> element
     var _dismissAddAnotherPopup = window.dismissAddAnotherPopup;
     window.dismissAddAnotherPopup = function(win, newId, newRepr) {
         var $elem = $('#' + windowname_to_id(win.name));
@@ -9,7 +9,7 @@
             _dismissAddAnotherPopup(win, newId, newRepr);
         }
         if ($elem.hasClass('chosen-select')) {
-            $elem.trigger('liszt:updated');
+            $elem.trigger('chosen:updated');
         }
     };
 
