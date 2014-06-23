@@ -31,8 +31,9 @@
                 }).css('overflow', 'visible');
             }
 
-            options = {};
-            if ($select.attr('data-optional')) {
+            var options = $select.data('chosenOptions') || {};
+
+            if ($select.data('optional')) {
                 options['allow_single_deselect'] = true;
             }
 

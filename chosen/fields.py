@@ -14,6 +14,9 @@ class ChosenFieldMixin(object):
     def __init__(self, *args, **kwargs):
         widget_kwargs = "overlay" in kwargs and\
             {"overlay": kwargs.pop('overlay')} or {}
+        widget_kwargs.update({
+            'chosen_options': kwargs.pop('chosen_options', {}),
+        })
         kwargs['widget'] = self.widget(**widget_kwargs)
         super(ChosenFieldMixin, self).__init__(*args, **kwargs)
 
